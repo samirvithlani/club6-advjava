@@ -59,4 +59,14 @@
     <servlet-name>AddProductController</servlet-name>
     <url-pattern>/AddProductController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListProductController</display-name>
+    <servlet-name>ListProductController</servlet-name>
+    <servlet-class>com.controller.ListProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListProductController</servlet-name>
+    <url-pattern>/ListProductController</url-pattern>
+  </servlet-mapping>
 </web-app>

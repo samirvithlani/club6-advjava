@@ -36,12 +36,15 @@ public class AddProductController extends HttpServlet {
 		if(res>0) {
 			System.out.println("product inserted..");
 			//redirect
+			response.sendRedirect("ListProductController");
 			
 		}
 		else {
 			
 			System.out.println("product not inserted..");
 			//error...
+			response.sendRedirect("ListProductController");
+			
 		}
 		
 		
