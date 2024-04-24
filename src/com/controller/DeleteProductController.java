@@ -1,20 +1,17 @@
 package com.controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bean.ProductBean;
 import com.dao.ProductDao;
 
 /**
- * Servlet implementation class ListProductController
+ * Servlet implementation class DeleteProductController
  */
-public class ListProductController extends HttpServlet {
+public class DeleteProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -22,14 +19,16 @@ public class ListProductController extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		int id = Integer.parseInt(request.getParameter("id"));
+		System.out.println(id);
 		
-		ProductDao productDao = new ProductDao();
-		List<ProductBean>products = productDao.getAllProducts(); //3
-		//iterate...
-		//jsp..
-		//product object...
-		request.setAttribute("products", products);
-		request.getRequestDispatcher("productList1.jsp").forward(request, response);
+		int res = new ProductDao().deleteProduct(id);
+		if(res>0) {
+			
+		//	response.sendRedirect("ListProductController");
+			request.setAttribute("isDeleted", "true");
+			request.getRequestDispatcher("ListProductController").forward(request, response);
+		}
 		
 		
 	}

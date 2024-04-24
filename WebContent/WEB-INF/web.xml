@@ -69,4 +69,14 @@
     <servlet-name>ListProductController</servlet-name>
     <url-pattern>/ListProductController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteProductController</display-name>
+    <servlet-name>DeleteProductController</servlet-name>
+    <servlet-class>com.controller.DeleteProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteProductController</servlet-name>
+    <url-pattern>/DeleteProductController</url-pattern>
+  </servlet-mapping>
 </web-app>

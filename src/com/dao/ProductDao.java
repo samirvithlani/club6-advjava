@@ -12,9 +12,33 @@ import com.util.DBConnection;
 
 public class ProductDao {
 
+	public int deleteProduct(int id) {
+
+		Connection conn = DBConnection.getConnection();
+		int res = 0;
+		if (conn != null) {
+
+			String deleteSQL = "delete from product where pid =?";
+			
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(deleteSQL);
+				pstmt.setInt(1, id);
+
+				res = pstmt.executeUpdate();
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		return res;
+
+	}
+
 	public List<ProductBean> getAllProducts() {
 
-		List<ProductBean> products = new ArrayList<ProductBean>();
+		List<ProductBean> products = new ArrayList<ProductBean>();// 0//1
 
 		Connection conn = DBConnection.getConnection();
 		if (conn != null) {

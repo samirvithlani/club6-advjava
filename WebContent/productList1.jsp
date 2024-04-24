@@ -15,7 +15,15 @@
 <body>
 
 	<%
-		List<ProductBean> products = (List<ProductBean>) request.getAttribute("products");
+		String isDeleted = (String) request.getAttribute("isDeleted");
+	if (isDeleted != null) { %>
+			<script type="text/javascript">
+				alert("record is deleted...");
+			</script>
+	<%} %>
+	
+	<%
+		List<ProductBean> products = (List<ProductBean>) request.getAttribute("products"); //3
 	if (products != null) {
 	%>
 	<table class="table table-dark">
@@ -25,6 +33,7 @@
 				<th>NAME</th>
 				<th>PRICE</th>
 				<th>QTY</th>
+				<th>ACTION</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,6 +46,9 @@
 				<td><%=productBean.getpName()%></td>
 				<td><%=productBean.getpPrice()%></td>
 				<td><%=productBean.getpQty()%></td>
+				<td><a
+					href="DeleteProductController?id=<%=productBean.getpId()%>"
+					class="btn btn-danger">DELETE</a></td>
 			</tr>
 
 
