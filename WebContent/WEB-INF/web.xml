@@ -79,4 +79,34 @@
     <servlet-name>DeleteProductController</servlet-name>
     <url-pattern>/DeleteProductController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddStudentController</display-name>
+    <servlet-name>AddStudentController</servlet-name>
+    <servlet-class>com.controller.student.AddStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddStudentController</servlet-name>
+    <url-pattern>/AddStudentController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListStudentController</display-name>
+    <servlet-name>ListStudentController</servlet-name>
+    <servlet-class>com.controller.student.ListStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListStudentController</servlet-name>
+    <url-pattern>/ListStudentController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteStudentController</display-name>
+    <servlet-name>DeleteStudentController</servlet-name>
+    <servlet-class>com.controller.student.DeleteStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteStudentController</servlet-name>
+    <url-pattern>/DeleteStudentController</url-pattern>
+  </servlet-mapping>
 </web-app>
