@@ -49,6 +49,8 @@
 				<td><%=studentBean.getsMarks()%></td>
 				<td><a
 					href="DeleteStudentController?id=<%=studentBean.getsId() %>">DELETE</a>
+					<a href = "DetailStudentController?id=<%=studentBean.getsId() %>">DETAIL</a>
+					<a href = "EditStudentController?id=<%=studentBean.getsId() %>">UPDATE</a>
 				</td>
 
 			</tr>

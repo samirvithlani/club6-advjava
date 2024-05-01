@@ -93,4 +93,59 @@ public class StudentDao {
 		return res;
 	}
 
+	public StudentBean getStudentById(int id) {
+
+		StudentBean studentBean = new StudentBean();
+		Connection conn = DBConnection.getConnection();
+		if (conn != null) {
+
+			String SELECTSQL = "select * from student where sid= ?";
+		
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SELECTSQL);
+				pstmt.setInt(1, id);
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+
+					studentBean.setsId(rs.getInt("sid"));
+					studentBean.setsName(rs.getString("sname"));
+					studentBean.setsEmail(rs.getString("semail"));
+					studentBean.setsAge(rs.getInt("sage"));
+					studentBean.setsMarks(rs.getInt("smarks"));
+					studentBean.setsPassword(rs.getString("spassword"));
+
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+		return studentBean;
+	}
+
+	public int updateStudent(StudentBean studentBean) {
+		int res =0;
+		Connection conn = DBConnection.getConnection();
+		if(conn!=null) {
+			
+			String updateSQL = "update student set sname=?,semail=?,sage=?,spassword=?,smarks=? where sid =?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(updateSQL);
+				pstmt.setString(1, studentBean.getsName());
+				pstmt.setString(2, studentBean.getsEmail());
+				pstmt.setInt(3, studentBean.getsAge());
+				pstmt.setString(4, studentBean.getsPassword());
+				pstmt.setInt(5, studentBean.getsMarks());
+				pstmt.setInt(6, studentBean.getsId());
+				res = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return res;
+	}
+
 }
