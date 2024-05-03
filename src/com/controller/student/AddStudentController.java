@@ -33,11 +33,11 @@ public class AddStudentController extends HttpServlet {
 		int sMarks = 0;
 		int sAge = 0;
 
-		if (strMarks != null || strMarks != "") {
+		if (strMarks != null && strMarks != "") {
 
 			sMarks = Integer.parseInt(strMarks);
 		}
-		if (strAge != null || strAge != "") {
+		if (strAge != null && strAge != "") {
 			sAge = Integer.parseInt(strAge);
 		}
 		
