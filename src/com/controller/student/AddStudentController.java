@@ -30,6 +30,8 @@ public class AddStudentController extends HttpServlet {
 		String sPassword = request.getParameter("pwdStudentPassword");
 		String strAge = request.getParameter("txtStudentAge");
 		String strMarks = request.getParameter("txtStudentMarks");
+		int courseId = Integer.parseInt(request.getParameter("cid"));
+		System.out.println(courseId);
 		int sMarks = 0;
 		int sAge = 0;
 
