@@ -30,7 +30,9 @@
 				<th>AGE</th>
 				<th>PASSWORD</th>
 				<th>MARKS</th>
+				<th>Courcename</th>
 				<th>ACTION</th>
+				
 			</tr>
 
 		</thead>
@@ -47,6 +49,7 @@
 				<td><%=studentBean.getsAge()%></td>
 				<td><%=studentBean.getsPassword()%></td>
 				<td><%=studentBean.getsMarks()%></td>
+				<td><%=studentBean.getcName()%></td>
 				<td><a
 					href="DeleteStudentController?id=<%=studentBean.getsId() %>">DELETE</a>
 					<a href = "DetailStudentController?id=<%=studentBean.getsId() %>">DETAIL</a>

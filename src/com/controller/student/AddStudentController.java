@@ -48,6 +48,7 @@ public class AddStudentController extends HttpServlet {
 		studentBean.setsEmail(sEmail);
 		studentBean.setsPassword(sPassword);
 		studentBean.setsMarks(sMarks);
+		studentBean.setcId(courseId);
 		
 		
 		//DAO...

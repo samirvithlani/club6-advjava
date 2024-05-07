@@ -17,7 +17,7 @@ public class StudentDao {
 		Connection conn = DBConnection.getConnection();
 		if (conn != null) {
 
-			String selectSQL = "select * from student";
+			String selectSQL = "select * from student left outer join course using(cid)";
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(selectSQL);
 				ResultSet rs = pstmt.executeQuery();
@@ -30,6 +30,7 @@ public class StudentDao {
 					studentBean.setsAge(rs.getInt("sage"));
 					studentBean.setsMarks(rs.getInt("smarks"));
 					studentBean.setsPassword(rs.getString("spassword"));
+					studentBean.setcName(rs.getString("cname"));
 
 					studentList.add(studentBean);
 				}
@@ -50,7 +51,7 @@ public class StudentDao {
 		Connection conn = DBConnection.getConnection();
 		if (conn != null) {
 
-			String insertSQL = "insert into student(sname,semail,spassword,sage,smarks)values(?,?,?,?,?)";
+			String insertSQL = "insert into student(sname,semail,spassword,sage,smarks,cid)values(?,?,?,?,?,?)";
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(insertSQL);
 				pstmt.setString(1, studentBean.getsName());
@@ -58,6 +59,7 @@ public class StudentDao {
 				pstmt.setString(3, studentBean.getsPassword());
 				pstmt.setInt(4, studentBean.getsAge());
 				pstmt.setInt(5, studentBean.getsMarks());
+				pstmt.setInt(6, studentBean.getcId());
 
 				res = pstmt.executeUpdate();
 			} catch (SQLException e) {

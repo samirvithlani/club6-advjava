@@ -10,6 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bean.StudentBean;
 import com.dao.StudentDao;
+////ALTER TABLE student
+//ADD COLUMN cid INT;
+//
+//-- 3. Add foreign key constraint to the `cid` column in the `student` table
+//ALTER TABLE student
+//ADD CONSTRAINT fk_student_cid
+//FOREIGN KEY (cid)
+//REFERENCES course(course_id);
+
 
 /**
  * Servlet implementation class ListStudentController
