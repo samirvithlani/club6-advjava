@@ -167,4 +167,24 @@
     <servlet-name>ELDemo</servlet-name>
     <url-pattern>/ELDemo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionDemo</display-name>
+    <servlet-name>SessionDemo</servlet-name>
+    <servlet-class>com.controller.SessionDemo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo</servlet-name>
+    <url-pattern>/SessionDemo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionDemo2</display-name>
+    <servlet-name>SessionDemo2</servlet-name>
+    <servlet-class>com.controller.SessionDemo2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo2</servlet-name>
+    <url-pattern>/SessionDemo2</url-pattern>
+  </servlet-mapping>
 </web-app>

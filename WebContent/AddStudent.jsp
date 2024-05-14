@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<%@include file = "Navbar.jsp"%>
+<%=name %>
 <%
 	List<CourseBean> courses = CourseUtil.getAllCourse();
 %>
