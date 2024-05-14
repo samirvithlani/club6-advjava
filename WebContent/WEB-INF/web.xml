@@ -157,4 +157,14 @@
     <filter-name>StudentValidationFilter</filter-name>
     <url-pattern>/AddStudentController</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ELDemo</display-name>
+    <servlet-name>ELDemo</servlet-name>
+    <servlet-class>com.controller.ELDemo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ELDemo</servlet-name>
+    <url-pattern>/ELDemo</url-pattern>
+  </servlet-mapping>
 </web-app>

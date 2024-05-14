@@ -43,20 +43,22 @@
 		<div>
 			<label>NAME</label> <input type="text" name="txtStudentName"
 				placeholder="Enter Name">
-			<%
+			<%-- <%
 				String sNameError = (String) request.getAttribute("sNameError");
 			if (sNameError != null) {
 				out.print(sNameError);
 			}
-			%>
+			%> --%>
+			${sNameError }
 		</div>
 		<div>
 			<label>Email</label> <input type="text" name="txtStudentEmail"
 				placeholder="Enter Email">
-			<%
+			<%-- <%
 				String emailError = (String) request.getAttribute("sEmailError");
 			out.print(emailError);
-			%>
+			%> --%>
+			${sEmailError }
 		</div>
 		<div>
 			<label>Password</label> <input type="password"
