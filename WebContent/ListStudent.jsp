@@ -10,13 +10,17 @@
 </head>
 <body>
 	<%
-	String deleted = (String)request.getAttribute("deleted");
-	if(deleted!=null){
-		
+		StudentBean studentBean1 = (StudentBean) session.getAttribute("student");
+	if (studentBean1 != null) {
+	%>
+	<h1><%=studentBean1.getsName() %></h1>
+	<%
+		String deleted = (String) request.getAttribute("deleted");
+	if (deleted != null) {
+
 		out.print(deleted);
 	}
-
-%>
+	%>
 
 	<%
 		List<StudentBean> students = (List<StudentBean>) request.getAttribute("students");
@@ -32,7 +36,7 @@
 				<th>MARKS</th>
 				<th>Courcename</th>
 				<th>ACTION</th>
-				
+
 			</tr>
 
 		</thead>
@@ -51,9 +55,9 @@
 				<td><%=studentBean.getsMarks()%></td>
 				<td><%=studentBean.getcName()%></td>
 				<td><a
-					href="DeleteStudentController?id=<%=studentBean.getsId() %>">DELETE</a>
-					<a href = "DetailStudentController?id=<%=studentBean.getsId() %>">DETAIL</a>
-					<a href = "EditStudentController?id=<%=studentBean.getsId() %>">UPDATE</a>
+					href="DeleteStudentController?id=<%=studentBean.getsId()%>">DELETE</a>
+					<a href="DetailStudentController?id=<%=studentBean.getsId()%>">DETAIL</a>
+					<a href="EditStudentController?id=<%=studentBean.getsId()%>">UPDATE</a>
 				</td>
 
 			</tr>
@@ -63,6 +67,12 @@
 			%>
 		</tbody>
 	</table>
+
+	<%
+		} else {
+		response.sendRedirect("login.jsp");
+	}
+	%>
 
 
 </body>

@@ -11,6 +11,42 @@ import com.bean.StudentBean;
 import com.util.DBConnection;
 
 public class StudentDao {
+	
+	
+	
+	public StudentBean loginStudent(String email,String password) {
+		
+		StudentBean studentBean =null;
+		Connection conn = DBConnection.getConnection();
+		if(conn!=null) {
+			
+			String selectSQL = "select * from student where semail =? and spassword = ?";
+		
+			try {
+				PreparedStatement pstmt=conn.prepareStatement(selectSQL);
+				pstmt.setString(1, email);
+				pstmt.setString(2, password);
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					studentBean = new StudentBean();
+					studentBean.setsId(rs.getInt("sid"));
+					studentBean.setsName(rs.getString("sname"));
+					studentBean.setsEmail(rs.getString("semail"));
+					studentBean.setsAge(rs.getInt("sage"));
+					studentBean.setsMarks(rs.getInt("smarks"));
+					studentBean.setsPassword(rs.getString("spassword"));
+
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		return studentBean;
+		
+		
+	}
 
 	public List<StudentBean> getAllStudents() {
 		List<StudentBean> studentList = new ArrayList<StudentBean>();
