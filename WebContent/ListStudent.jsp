@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Navbar.jsp" %>
 	<%
 		StudentBean studentBean1 = (StudentBean) session.getAttribute("student");
 	if (studentBean1 != null) {

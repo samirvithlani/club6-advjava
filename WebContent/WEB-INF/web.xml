@@ -197,4 +197,20 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>com.listners.ApplicationListnerDemo</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.listners.SessionListnerDemo</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>LogoutStudentController</display-name>
+    <servlet-name>LogoutStudentController</servlet-name>
+    <servlet-class>com.controller.student.LogoutStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutStudentController</servlet-name>
+    <url-pattern>/LogoutStudentController</url-pattern>
+  </servlet-mapping>
 </web-app>
