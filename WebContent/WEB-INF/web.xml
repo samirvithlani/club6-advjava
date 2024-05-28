@@ -213,4 +213,14 @@
     <servlet-name>LogoutStudentController</servlet-name>
     <url-pattern>/LogoutStudentController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletTojstl1</display-name>
+    <servlet-name>ServletTojstl1</servlet-name>
+    <servlet-class>com.controller.jstl.ServletTojstl1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletTojstl1</servlet-name>
+    <url-pattern>/ServletTojstl1</url-pattern>
+  </servlet-mapping>
 </web-app>
